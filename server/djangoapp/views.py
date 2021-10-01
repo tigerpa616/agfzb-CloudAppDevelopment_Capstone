@@ -15,10 +15,9 @@ logger = logging.getLogger(__name__)
 
 
 # Create your views here.
-template = "<html>" \ 
-            "Placeholder Static view" \
-                "</html>"
-return HttpResponse(content=template)
+def index(request):
+    template = "<html>" "Placeholder Static view" "</html>"
+    return HttpResponse(content=template)
 
 # Create an `about` view to render a static about page
 # def about(request):

@@ -10,10 +10,10 @@ urlpatterns = [
     # name the URL
 
     # path for about view
-    urlpatterns = [
+    
     # Create a path object defining the URL pattern to the index view
     path(route='', view=views.index, name='index'),
-    ]
+    
 
     # path for contact us view
 
