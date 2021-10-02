@@ -15,7 +15,9 @@ urlpatterns = [
     # Create a path object defining the URL pattern to the index view
     path('', views.index, name='index'),
     path('djangoapp/about', views.about, name='about'),
+    path('djangoapp/about.html', views.about, name='about'),
     path('djangoapp/index', views.get_dealerships, name='about'),
+    path('djangoapp/index.html', views.get_dealerships, name='about'),
 
     # path for contact us view
 
