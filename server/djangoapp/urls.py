@@ -24,10 +24,17 @@ urlpatterns = [
     path('djangoapp/contact.html', views.contact, name='contact'),
 
     # path for registration
+    path('registration/', views.registration_request, name='registration'),
+    path('djangoapp/registration', views.registration_request, name='registration'),
 
     # path for login
+    path('login/', views.login_request, name='login'),
+    path('djangoapp/login', views.login_request, name='login'),
+    path('djangoapp/login.html', views.login_request, name='login'),
 
     # path for logout
+    path('logout/', views.logout_request, name='logout'),
+    path('djangoapp/logout', views.logout_request, name='logout'),
 
     path(route='', view=views.get_dealerships, name='index'),
 
