@@ -16,10 +16,12 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('djangoapp/about', views.about, name='about'),
     path('djangoapp/about.html', views.about, name='about'),
-    path('djangoapp/index', views.get_dealerships, name='about'),
-    path('djangoapp/index.html', views.get_dealerships, name='about'),
+    path('djangoapp/index', views.get_dealerships, name='index'),
+    path('djangoapp/index.html', views.get_dealerships, name='index'),
 
     # path for contact us view
+    path('djangoapp/contact', views.contact, name='contact'),
+    path('djangoapp/contact.html', views.contact, name='contact'),
 
     # path for registration
 
