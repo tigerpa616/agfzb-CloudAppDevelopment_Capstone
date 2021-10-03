@@ -37,11 +37,11 @@ jobs:
 
         shell: bash
       - name: Target CF
-        run: ibmcloud target --cf-api https://api.$IBM_CLOUD_REGION.cf.cloud.ibm.com -r $IBM_CLOUD_REGION -o $IBM_CLOUD_ORG -s $IBM_CLOUD_SPACE
+        run: ibmcloud target --cf-api https://api.$IBM_CLOUD_REGION.cf.cloud.ibm.com -r $IBM_CLOUD_REGION -o $IBM_CLOUD_ORG -s djangoserver-space 
         shell: bash
       - name: List all applications
         run: ibmcloud cf apps
         shell: bash
       - name: Deploy manifest file
-        run: ibmcloud target -s djangoserver-space , ibmcloud cf push -f ./$MANIFEST_NAME
+        run: ibmcloud cf push -f ./$MANIFEST_NAME
         shell: bash
