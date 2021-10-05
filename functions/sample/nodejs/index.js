@@ -12,7 +12,9 @@ function main(params) {
     });
 
     let dbList = getDbs(cloudant);
+    console.log('hello world');
     return { dbs: dbList };
+  
 }
 
 function getDbs(cloudant) {
