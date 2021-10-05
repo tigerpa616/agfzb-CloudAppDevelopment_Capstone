@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cloudant/cloudant": "^4.4.0"
+    "@cloudant/cloudant": "^4.5.1",
+    "cloudant": "^1.10.0-NOTICE",
+    "package.json": "^2.0.1"
   }
 }
