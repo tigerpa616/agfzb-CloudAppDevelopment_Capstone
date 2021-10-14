@@ -103,16 +103,55 @@ def registration_request(request):
 
 # Update the `get_dealerships` view to render the index page with a list of dealerships
 def get_dealerships(request):
-    context = {}
     if request.method == "GET":
-        return render(request, 'djangoapp/index.html', context)
+        dealerships = get_dealerships_from_cf()
+        context = {"dealerships": dealerships}
+        get_dealerships_view = render(request, 'djangoapp/index.html', context)
+    return get_dealerships_view
 
 
 # Create a `get_dealer_details` view to render the reviews of a dealer
 # def get_dealer_details(request, dealer_id):
 # ...
-
+def get_dealer_reviews(request, dealer_id, dealer_name):
+    """ Dealerships Details """
+    if request.method == "GET":
+        dealer_reviews = get_dealer_reviews_from_cf(dealer_id)
+        context = {
+            "dealer_id": dealer_id,
+            "dealer_name": dealer_name,
+            "reviews": dealer_reviews
+        }
+        dealer_details_view = render(
+            request, 'djangoapp/reviews.html', context)
+    return dealer_details_view
 # Create a `add_review` view to submit a review
 # def add_review(request, dealer_id):
 # ...
+def add_dealer_review(request, dealer_id, dealer_name):
+    """ Add Review View """
+    if request.method == "GET":
+        cars = CarModel.objects.filter(dealer_id=dealer_id)
+        context = {"cars": cars, "dealer_id": dealer_id,
+                   "dealer_name": dealer_name}
+        add_review_view = render(request, 'djangoapp/add_review.html', context)
+    if request.method == "POST" and request.user.is_authenticated:
+        form = request.POST
+        review = {
+            "review_id": random.randint(0, 100),
+            "reviewer_name": form["fullname"],
+            "dealership": dealer_id,
+            "review": form["review"]
+        }
+        if form.get("purchase"):
+            review["purchase"] = True
+            review["purchase_date"] = form["purchasedate"]
+            car = get_object_or_404(CarModel, pk=form["car"])
+            review["car_make"] = car.carmake.name
+            review["car_model"] = car.name
+            review["car_year"] = car.year
+        json_result = add_dealer_review_to_db(review)
+        add_review_view = redirect(
+            'djangoapp:dealer_reviews', dealer_id=dealer_id, dealer_name=dealer_name)
+    return add_review_view
 
