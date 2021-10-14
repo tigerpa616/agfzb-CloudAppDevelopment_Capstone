@@ -14,7 +14,7 @@ class CarMake(models.Model):
     # Fields
     carmake_id = models.SmallAutoField(primary_key=True)
     name = models.CharField(max_length=50, unique=True, blank=False)
-    Description = models.TextField(max_length=100)
+    description = models.TextField(max_length=100)
 
     def __str__(self):
         return str(self.name)
