@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
@@ -12,6 +11,7 @@ import logging
 import json
 from . import restapis
 from . import models
+
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -106,14 +106,15 @@ def registration_request(request):
 
 # Update the `get_dealerships` view to render the index page with a list of dealerships
 def get_dealerships(request):
-    context = {}
     if request.method == "GET":
-        url = 'https://c735cad8.us-south.apigw.appdomain.cloud/api/dealership'
+        url = 'https://c735cad8.us-south.apigw.appdomain.cloud/api/dealership/dealerships/dealer-get'
         # Get dealers from the URL
-        context = {"dealerships": restapis.get_dealers_from_cf(url)}
+        dealerships = get_dealers_from_cf(url)
         # Concat all dealer's short name
+        dealer_names = ' '.join([dealer.short_name for dealer in dealerships])
         # Return a list of dealer short name
-        return render(request, 'djangoapp/index.html', context)
+        return HttpResponse(dealer_names)
+
 
 
 # Create a `get_dealer_details` view to render the reviews of a dealer

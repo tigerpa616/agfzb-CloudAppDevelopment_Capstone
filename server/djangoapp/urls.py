@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
-from .views import index
+
 
 app_name = 'djangoapp'
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
     # name the URL
 
     # path for about view
-    
+    path(route='', view=views.get_dealerships, name='index'),
     # Create a path object defining the URL pattern to the index view
     path('', views.index, name='index'),
     path('djangoapp/about', views.about, name='about'),
