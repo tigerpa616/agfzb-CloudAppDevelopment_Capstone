@@ -20,7 +20,7 @@ spec:
         run: dealership
     spec:
       containers:
-      - image: us.icr.io/dealership_review/dealership:v2
+      - image: us.icr.io/dealership_review/dealership:v3
         imagePullPolicy: Always
         name: dealership
         ports:
