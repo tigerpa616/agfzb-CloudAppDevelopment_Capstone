@@ -11,6 +11,8 @@ import logging
 import json
 from . import restapis
 from . import models
+from .restapis import get_dealers_from_cf
+
 
 
 # Get an instance of a logger
@@ -107,7 +109,7 @@ def registration_request(request):
 # Update the `get_dealerships` view to render the index page with a list of dealerships
 def get_dealerships(request):
     if request.method == "GET":
-        url = 'https://c735cad8.us-south.apigw.appdomain.cloud/api/dealership/dealerships/dealer-get'
+        url = 'https://5b93346d.us-south.apigw.appdomain.cloud/dealerships/dealer-get'
         # Get dealers from the URL
         dealerships = get_dealers_from_cf(url)
         # Concat all dealer's short name
