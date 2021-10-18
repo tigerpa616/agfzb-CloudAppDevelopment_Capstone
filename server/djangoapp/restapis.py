@@ -53,7 +53,7 @@ def get_dealers_from_cf(url, **kwargs):
             dealer_obj = models.CarDealer(address=dealer["address"], city=dealer["city"], full_name=dealer["full_name"],
                                    id=dealer["id"], lat=dealer["lat"], long=dealer["long"],
                                    short_name=dealer["short_name"],
-                                   st=dealer["st"], state=dealer["state"], zip=dealer["zip"])
+                                   st=dealer["st"], zip=dealer["zip"])
             results.append(dealer_obj)
             print('-------------------------------------------------------')
     return results
@@ -111,3 +111,6 @@ def analyze_review_sentiments(text):
     sentimentresult = sentiment_label
     
     return sentimentresult
+
+
+
