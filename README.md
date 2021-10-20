@@ -7,7 +7,6 @@ http://danfullstack01.mybluemix.net/
 
 - Django https://www.djangoproject.com/
 - Bootstrap 
-- Font Awesome https://fontawesome.com/
 - IBM Cloud Foundry
 - IBM Cloudant
 - IBM Cloud Functions 
