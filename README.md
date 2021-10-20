@@ -5,7 +5,7 @@ http://danfullstack01.mybluemix.net/
 
 # Tools and resources
 
-- Django https://www.djangoproject.com/
+- Django 
 - Bootstrap 
 - IBM Cloud Foundry
 - IBM Cloudant
