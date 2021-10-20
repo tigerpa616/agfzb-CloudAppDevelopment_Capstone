@@ -6,7 +6,7 @@ http://danfullstack01.mybluemix.net/
 # Tools and resources
 
 - Django https://www.djangoproject.com/
-- Bootstrap *(UI based on Bootstrap Cover template)* https://getbootstrap.com/docs/4.0/examples/cover/
+- Bootstrap 
 - Font Awesome https://fontawesome.com/
 - IBM Cloud Foundry
 - IBM Cloudant
