@@ -1,3 +1,19 @@
+# [Daniel Masarsky](https://github.com/tigerpa616) 
+
+# Live demo: 
+http://danfullstack01.mybluemix.net/
+
+# Tools and resources
+
+- Django https://www.djangoproject.com/
+- Bootstrap *(UI based on Bootstrap Cover template)* https://getbootstrap.com/docs/4.0/examples/cover/
+- Font Awesome https://fontawesome.com/
+- IBM Cloud Foundry
+- IBM Cloudant
+- IBM Cloud Functions 
+- IBM API Gateway
+- IBM Watson NLU
+
 # Final Project Template
 
 The final project for this course has several steps that you must complete. 
